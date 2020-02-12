@@ -8,12 +8,12 @@ class ProductPage(BasePage):
         self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON).click()
 
     def should_have_correct_product_in_the_message(self, product_name):
-        message = self.browser.find_element(*ProductPageLocators.MESSAGE_PRODUCT_WAS_ADDED_TO_BUSKET)
-        assert product_name in message.text, "Incorrect product name in the message"
+        product_name_in_the_message = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_IN_THE_MESSAGE)
+        assert product_name == product_name_in_the_message.text, "Incorrect product name in the message"
 
     def should_have_correct_price_in_the_message(self, product_price):
-        message = self.browser.find_element(*ProductPageLocators.MESSAGE_YOUR_BASKET_TOTAL_IS_NOW)
-        assert product_price in message.text, "Incorrect product price in the message"
+        product_price_in_the_message = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_IN_THE_MESSAGE)
+        assert product_price == product_price_in_the_message.text, "Incorrect product price in the message"
 
     def get_product_name(self):
         return self.browser.find_element(*ProductPageLocators.PRODUCT_NAME).text
