@@ -4,6 +4,8 @@ from pages.locators import ProductPageLocators
 
 class ProductPage(BasePage):
 
+    product_link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/'
+
     def click_add_to_bucket_button(self):
         self.browser.find_element(*ProductPageLocators.ADD_TO_BASKET_BUTTON).click()
 

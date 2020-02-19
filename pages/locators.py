@@ -1,18 +1,25 @@
 from selenium.webdriver.common.by import By
 
+
 class BasePageLocators():
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
     VIEW_BUCKET_BUTTON = (By.CSS_SELECTOR, ".btn-group > a")
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
 
+
 class MainPageLocators():
     pass
-    # LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+
 
 class LoginPageLocators():
-    # LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    REGISTRATION_EMAIL = (By.CSS_SELECTOR, "#id_registration-email")
+    REGISTRATION_PASSWORD = (By.CSS_SELECTOR, "#id_registration-password1")
+    REGISTRATION_PASSWORD_CONFIRM = (By.CSS_SELECTOR, "#id_registration-password2")
+    REGISTRATION_SUBMIT_BUTTON = (By.NAME, "registration_submit")
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
+
 
 class ProductPageLocators():
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages > div")
